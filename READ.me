@@ -1,1 +1,19 @@
+A quantitative capital allocation tool for multi-strategy trading portfolios.
 
+This script takes equity curve data from individually backtested trading systems (e.g., from QuantConnect) and computes robust capital allocation weights using a composite of:
+
+Kelly Criterion – maximizes expected geometric growth
+Hierarchical Risk Parity (HRP) – clusters uncorrelated systems and recursively allocates
+Conditional Value at Risk (CVaR) – minimizes tail risk under extreme events
+Designed for systematic traders allocating capital across strategies with differing durations, performance profiles, and risk characteristics.
+
+Features
+
+Paste equity data directly from QuantConnect reports (tabular format)
+Automatically aligns systems with different start/end dates
+Calculates daily returns from equity curves
+Computes three sets of weights: Kelly, HRP, CVaR
+Outputs a composite weighted allocation (default: 50% Kelly, 30% HRP, 20% CVaR)
+Works entirely in the terminal or IDLE (no file uploads required)
+
+You can adjust weighting blend.
